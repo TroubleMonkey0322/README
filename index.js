@@ -1,42 +1,102 @@
 // TODO: Include packages needed for this application
-import inquirer from 'inquirer';
 import colors from 'colors';
+import inquirer from 'inquirer';
 import fs from 'fs';
 
+
 // TODO: Create an array of questions for user input
-inquirer
-.prompt([
+   
+  
+  inquirer 
+  .prompt([
+
  {
     type: 'input',
-    message: colors.rainbow('What is your favorite number?'),
-    name: 'number',
+    message: colors.rainbow('Title'),
+    name: 'title',
       },
       {
-        type: 'list',
-        message: colors.orange('What is your favorite color?'),
-        name: 'color',
-        choices: ['Pink', 'Blue', 'Green', 'Orange', 'Red'],
-      },
-      {
-        type: 'checkbox',
-        message: colors.green('What is your favorite animal?'),
-        name: 'animal';
-        choices: ['Cat', 'Dog', 'Tiger', 'Dinosaur'],
-      },
-    ])
+        type: 'input',
+        message: colors.magenta('Description'),
+        name: 'description',
+              },
+              {
+                type: 'list',
+                message: colors.gray('License'),
+                name: 'license',
+                choices: ['MIT', 'ISC', 'Mozilla Public License 2.0', 'Open Software License 3.0' ],
+              },
+              {
+                type: 'input',
+                message: colors.cyan('Contributing'),
+                  name: 'contributing',
+              },
+              {
+                type: 'input',
+                message: colors.white('Installation'),
+                name: 'installation',
+              },
+              {
+                type: 'input',
+                message: colors.blue('Usage'),
+                name: 'usage',
+              },
+              {
+                type: 'input',
+                message: colors.green('Contributing'),
+                name: 'contributing',
+              },
+             {
+             type: 'input',
+              message: colors.yellow('Tests'),
+              name: 'test',
+             },
+             {
+              type: 'input',
+              message: colors.red('Questions'),
+              name: 'questions'
+             },
+    ]).then(answers => {
+      const readmeContent = `
+      # ${answers.title}
+      
+      ## Description
+      ${answers.description}
 
-        .then((answer) => {
-            const fileName = `${answer.name.toLowerCase().split(' ').join('')}.json`;
-        
+     ## Table of Contents
+     
+     
+      ## Installation
+      ${answers.installation}
+
+      ## Usage
+      ${answers.usage}
+
+      ## License
+      ${answers.license}
+
+      ## Contributing
+      ${answers.contributing}
+
+      ## Tests
+      ${answers.test}
+
+      ## Questions
+      ${answers.questions}
+      `;
+
+              
 
 // TODO: Create a function to write README file
-fs.writeToFile(fileName, JSON.stringify(data, null, `\t`), (err) =>
-    err ? console.log(err) : console.log('Yippee! You did it!')
-);
-        });
+fs.writeFileSync('README.md', readmeContent);
+console.log('README.md has been generated!');
+});
+
+        
 
 // TODO: Create a function to initialize app
-function init() {}
+//function () {}
 
 // Function call to initialize app
-init();
+// init();
+
