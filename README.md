@@ -2,7 +2,7 @@
       # My cool READme 
       
       ## Description
-      This is my super cool READme file
+      This is my super cool READme file.  This was created as a first attempt to create a professional README file.
 
      ## Table of Contents
      [Description](#description)
@@ -14,19 +14,19 @@
      [Questions](#questions)
      
       ## Installation
-      Yes, please
+     It is installed
 
       ## Usage
-      Yes, please
+      It is being used
 
       ## License
-      MIT
+      ISC
 
       ## Contributing
       Me
 
       ## Tests
-      Yes, please
+     This one!
 
       ## Questions
       tammylpaquette@gmail.com, TroubleMonkey0322
